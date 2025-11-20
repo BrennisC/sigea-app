@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import ProtectedRoute from "../../components/ProtectedRoute";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Card from "../../components/Card";
