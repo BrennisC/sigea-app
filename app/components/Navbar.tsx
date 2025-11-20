@@ -43,10 +43,14 @@ export default function Navbar() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" size="sm">
-              Iniciar Sesión
-            </Button>
-            <Button size="sm">Mi Cuenta</Button>
+            <Link href="/login">
+              <Button variant="outline" size="sm">
+                Iniciar Sesión
+              </Button>
+            </Link>
+            <Link href="/registro">
+              <Button size="sm">Registrarse</Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
