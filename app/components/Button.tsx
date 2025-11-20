@@ -5,6 +5,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   isLoading?: boolean;
+  fullWidth?: boolean;
 }
 
 export default function Button({
@@ -13,6 +14,7 @@ export default function Button({
   children,
   isLoading = false,
   disabled = false,
+  fullWidth = false,
   className = "",
   ...props
 }: ButtonProps) {
@@ -36,10 +38,12 @@ export default function Button({
     lg: "px-8 py-3 text-lg",
   };
 
+  const widthClass = fullWidth ? "w-full" : "";
+
   return (
     <button
       disabled={disabled || isLoading}
-      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`}
+      className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`}
       {...props}
     >
       {isLoading && (
